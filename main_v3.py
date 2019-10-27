@@ -142,34 +142,3 @@ ans = np.array(ans.value)
 predictPdsDF = pd.DataFrame({'RatingID': ans[:, 0], 'Rating': ans[:, 1]})
 predictPdsDF['RatingID'] = predictPdsDF['RatingID'].astype(int)
 predictPdsDF.to_csv("predict.csv", index = False)
-
-
-# ---------------------------------- Subtract Each Movie Mean--------------------------------------------
-'''
-def ProcessFile(filename):
-    train_pdsDF2 = pd.read_csv(filename, sep = ",")
-    train_pdsDF2 = train_pdsDF2.drop("Timestamp", axis=1)
-    # get all ItemID
-    ItemList = list(dict.fromkeys(train_pdsDF2.iloc[:, 1]))
-    for item in ItemList:
-        isItem = train_pdsDF2.iloc[:, 1]==item
-        rating_sum = train_pdsDF2[isItem]['Rating'].sum()
-        rating_avg = rating_sum/train_pdsDF2[isItem].shape[0]
-        # update value of rating in the specific ItemID
-        train_pdsDF2.loc[isItem, 'Rating'] = train_pdsDF2.loc[isItem, 'Rating'] - rating_avg
-    train_pdsDF2.to_csv('output.dat', sep = ",", header=False, index = False)
-
-# process train and create an output file
-#ProcessFile("train.dat")'''
-# ------------------------------------- read processed train file to RDD -------------------------------------
-'''
-process_train_lines = sc.textFile("output.dat")
-# Remove Column's Name (UserID,ItemID,Rating,Timestamp)
-header = train_lines.first()
-train_lines = train_lines.filter(lambda line: line != header)
-# Format Train Data (ItemID, UserID, Rating)
-
-global train_rdd
-process_train_rdd = process_train_lines.map(lambda line: line.split(',')).map(
-            lambda tokens: (int(tokens[0]),int(tokens[1]),float(tokens[2])))'''
-
