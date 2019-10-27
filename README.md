@@ -15,4 +15,4 @@ train.dat: Training set (UserID <comma separator> ItemID <tab separator> Rating 
   
 test.dat: Testing set (RatingID<comma separator> UserID <comma separator> ItemID, no rating provided).
   
-(Data is available on the Leader Board website: https://www.kaggle.com/c/cmpe-256- f2019-hw1)
+(Data is available on the Leader Board website: https://www.kaggle.com/c/cmpe-256-f2019-hw1)
