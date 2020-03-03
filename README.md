@@ -16,3 +16,5 @@ train.dat: Training set (UserID <comma separator> ItemID <tab separator> Rating 
 test.dat: Testing set (RatingID<comma separator> UserID <comma separator> ItemID, no rating provided).
   
 (Data is available on the Leader Board website: https://www.kaggle.com/c/cmpe-256-f2019-hw1)
+
+The RMSE of the test.dat is 0.919. (Rank #5 on the leaderboard of the above kaggle URL)
