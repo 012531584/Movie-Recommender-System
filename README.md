@@ -10,7 +10,8 @@ Collaborative Filtering (CF) systems measure similarity of users by their item p
 Data Description:
 
 The training dataset consists of 85724 ratings and the test dataset consists of 2154 ratings. We provide you with the training data ratings and the test ratings are held out. The data are provided as text in train.dat and test.dat, which should be processed appropriately.
-
+  
+  
 train.dat: Training set (UserID <comma separator> ItemID <tab separator> Rating (Integers 1 to 5) <tab separator> Timestamp (Unix time stamp).
   
 test.dat: Testing set (RatingID<comma separator> UserID <comma separator> ItemID, no rating provided).
